@@ -1,0 +1,16 @@
+clever_age_process:
+    default_error_strategy: stop
+    configurations:
+        project_prefix.die:
+            tasks:
+                entry:
+                    service: '@CleverAge\ProcessBundle\Task\ConstantOutputTask'
+                    options:
+                        output:
+                            id: 123
+                            firstname: Test1
+                            lastname: Test2
+                    outputs: [die]
+
+                die:
+                    service: '@CleverAge\ProcessBundle\Task\Debug\DieTask'
