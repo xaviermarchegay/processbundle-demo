@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "27cd38f21ab83767d82c45e433adf15c",
+    "content-hash": "db6401589eebfcc21a8e0b547f5650c6",
     "packages": [
         {
             "name": "cleverage/doctrine-process-bundle",
