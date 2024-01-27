@@ -1,0 +1,46 @@
+clever_age_process:
+    default_error_strategy: stop
+    configurations:
+        pb_demo.csv_compute:
+            tasks:
+                extract:
+                    service: '@CleverAge\ProcessBundle\Task\File\Csv\CsvReaderTask'
+                    options:
+                        file_path: 'big_file.csv'
+                        delimiter: ','
+                    outputs: [transform]
+                transform:
+                    service: '@CleverAge\ProcessBundle\Task\TransformerTask'
+                    options:
+                        transformers:
+                            mapping:
+                                mapping:
+                                    sku:
+                                        code: '[sku]'
+                                        transformers:
+                                            cast:
+                                                type: 'string'
+                                    qty:
+                                        code: '[qty]'
+                                        transformers:
+                                            cast:
+                                                type: 'integer'
+                                    date_next_sale:
+                                        code: '[date_next_sale]'
+                                    statut:
+                                        code: '[statut]'
+                                        transformers:
+                                            cast:
+                                                type: 'integer'
+                                    email_resp:
+                                        code: '[email_resp]'
+                                        transformers:
+                                            cast:
+                                                type: 'string'
+                                    qty_big:
+                                        code: '[qty]'
+                                        transformers:
+                                            is_big: ~
+                    outputs: [load]
+                load:
+                    service: '@CleverAge\ProcessBundle\Task\Debug\StopwatchTask'

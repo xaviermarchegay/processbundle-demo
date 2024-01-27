@@ -22,3 +22,9 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Transformer\:
+        resource: '../src/Transformer/*'
+        tags:
+            - { name: cleverage.transformer }
+            - { name: monolog.logger, channel: cleverage_process_transformer }

@@ -43,7 +43,7 @@ class FilterCsvFlowCommand extends Command
                 'sku' => ref('sku')->cast('string'),
                 'qty' => ref('qty')->cast('integer'),
                 'date_next_sale' => ref('date_next_sale'),
-                'statut' => ref('statut')->cast('string'),
+                'statut' => ref('statut')->cast('integer'),
                 'email_resp' => ref('email_resp')->cast('string')
             ])
             ->withEntry(
