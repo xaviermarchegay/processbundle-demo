@@ -12,7 +12,7 @@ use Symfony\Component\HttpKernel\KernelInterface;
 
 class Csv
 {
-    public const ROWS = 1_000_000;
+    public const ROWS = 10_000_000;
 
     private Generator $faker;
 
