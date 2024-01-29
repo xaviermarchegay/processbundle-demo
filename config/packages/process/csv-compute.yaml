@@ -47,3 +47,6 @@ clever_age_process:
                     options:
                         file_path: 'computed_pb_big_file.csv'
                         delimiter: ','
+                    outputs: [debug]
+                debug:
+                    service: '@CleverAge\ProcessBundle\Task\Debug\DieTask'

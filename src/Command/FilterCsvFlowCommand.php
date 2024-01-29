@@ -7,6 +7,7 @@ namespace App\Command;
 use App\Service\Csv;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Helper\Helper;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Stopwatch\Stopwatch;
@@ -56,6 +57,8 @@ class FilterCsvFlowCommand extends Command
         $this->stopwatch->stop(__METHOD__);
 
         $output->writeln((string) $this->stopwatch->getEvent(__METHOD__));
+
+        $output->writeln(Helper::formatMemory(memory_get_peak_usage(true)));
 
         return Command::SUCCESS;
     }
