@@ -28,7 +28,7 @@ class Csv
 
     public function getFlowFilename(): string
     {
-        return $this->kernel->getProjectDir() . '/computed_big_file.csv';
+        return $this->kernel->getProjectDir() . '/computed_flow_big_file.csv';
     }
 
     public function create(): int

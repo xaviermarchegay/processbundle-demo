@@ -43,4 +43,7 @@ clever_age_process:
                                             is_big: ~
                     outputs: [load]
                 load:
-                    service: '@CleverAge\ProcessBundle\Task\Debug\StopwatchTask'
+                    service: '@CleverAge\ProcessBundle\Task\File\Csv\CsvWriterTask'
+                    options:
+                        file_path: 'computed_pb_big_file.csv'
+                        delimiter: ','
